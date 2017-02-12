@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition template="/WEB-INF/template/LayoutPadrao.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui">
+
+    <ui:define name="titulo">Emissão de Pedido Vendas</ui:define>
+
+    <ui:define name="corpo">
+        <h:form id="frm">
+            <h1>Emissão de Pedido Vendas</h1>
+
+            <p:messages autoUpdate="true" closable="true" />
+
+            <f:metadata>
+                <f:viewParam name="pedido" value="#{relatorioPedidoClienteBean.numeroPedido}" />
+            </f:metadata>
+
+            <p:toolbar style="margin-top: 20px">
+                <p:toolbarGroup>
+                    <p:commandButton value="Emitir" action="#{relatorioPedidoClienteBean.emitir}"
+                                     ajax="false" />
+                </p:toolbarGroup>
+            </p:toolbar>
+
+            <p:panelGrid columns="2" id="painel" style="width: 100%; margin-top: 20px"
+                         columnClasses="rotulo, campo">
+
+
+                <p:outputLabel value="Número do Pedido" />
+                <h:panelGroup>
+                    <p:inputText value="#{relatorioPedidoClienteBean.numeroPedido}" label="Número Pedido" size="12"/>
+                </h:panelGroup>
+            </p:panelGrid>
+        </h:form>
+    </ui:define>
+</ui:composition>
