@@ -23,7 +23,7 @@ public class EntityManagerProducer {
     private final EntityManagerFactory factory;
 
     public EntityManagerProducer() {
-        factory = Persistence.createEntityManagerFactory("PedidoPU");
+        factory = Persistence.createEntityManagerFactory("PedidoPU", PersistenceProperties.get());
     }
 
     @Produces  @RequestScoped

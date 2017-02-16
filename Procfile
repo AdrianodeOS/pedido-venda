@@ -1,0 +1,1 @@
+web: java $JAVA OPTS -jar target/dependecy/webapp-renner-jar --port $PORT target/*.war
