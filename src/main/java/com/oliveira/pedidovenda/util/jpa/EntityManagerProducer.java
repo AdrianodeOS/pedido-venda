@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.oliveira.pedidovenda.util.jpa;
 
 import javax.enterprise.context.ApplicationScoped;
@@ -23,7 +18,7 @@ public class EntityManagerProducer {
     private final EntityManagerFactory factory;
 
     public EntityManagerProducer() {
-        factory = Persistence.createEntityManagerFactory("PedidoPU", PersistenceProperties.get());
+        factory = Persistence.createEntityManagerFactory("PedidoPU"/*, PersistenceProperties.get()*/);
     }
 
     @Produces  @RequestScoped
